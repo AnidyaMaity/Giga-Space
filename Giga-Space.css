@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.chat-box {
+    height: 300px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #e0e0e0;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background-color: #e0e0e0;
+}
+
+.chat-box div {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#userInput {
+    width: 80%;
+    padding: 15px;
+    border: none;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 14px;
+}
+
+#sendBtn {
+    width: 20%;
+    padding: 15px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+}
+
+#sendBtn:hover {
+    background-color: #218838;
+}
+
+#sendBtn:active {
+    transform: scale(0.98);
+}
+
+/* Additional styling for success/failure feedback */
+.feedback {
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #28a745;
+    padding: 6px;
+    border-radius: 5px;
+    margin-top: 8px;
+    opacity: 0;
+    animation: fadeInFeedback 0.4s ease forwards;
+}
+
+.error {
+    background-color: #dc3545;
+}
+
+@keyframes fadeInFeedback {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Command Grid Styling */
+.command-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.command-grid button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.command-grid button:hover {
+    background-color: #0056b3;
+}
+
+.command-grid button:active {
+    transform: scale(0.98);
+}
